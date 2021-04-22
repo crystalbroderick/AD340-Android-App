@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AD340 Android App</string>
+    <string name="name">Crystal Broderick</string>
+    <string name="factList">About Me:</string>
+    <string name="fact1">* I love gaming and puzzles</string>
+    <string name="fact2">* I mainly read thrillers and fantasy novels</string>
+    <string name="fact3">* I have colorful blue/purple hair~</string>
 </resources>
