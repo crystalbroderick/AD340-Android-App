@@ -5,4 +5,6 @@
     <string name="fact1">* I love gaming and puzzles</string>
     <string name="fact2">* I mainly read thrillers and fantasy novels</string>
     <string name="fact3">* I have colorful blue/purple hair~</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
 </resources>
