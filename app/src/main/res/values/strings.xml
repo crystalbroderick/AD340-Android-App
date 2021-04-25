@@ -7,4 +7,8 @@
     <string name="fact3">* I have colorful blue/purple hair~</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="button1">Movies</string>
+    <string name="button2">Button 2</string>
+    <string name="button3">Button 3</string>
+    <string name="button4">Button 4</string>
 </resources>
