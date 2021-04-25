@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    //About me list with 3 facts
+
     <TextView
         android:id="@+id/factList"
         android:layout_width="wrap_content"
@@ -90,8 +90,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editText" />
 
-    // 2x2 Grid for button navigation
-
+    <!-- 2x2 Grid for button navigation-->
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="0dp"
@@ -101,45 +100,41 @@
         android:useDefaultMargins="true"
         app:layout_constraintEnd_toEndOf="@+id/send"
         app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:context="us.crystal.ad340kotlin">
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
             android:backgroundTint="@color/teal_700"
+            android:onClick="btnClick"
             android:text="@string/button1" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="1"
-
-            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:onClick="btnClick"
             android:text="@string/button2" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
+            android:onClick="btnClick"
             android:text="@string/button3" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/teal_700"
+            android:onClick="btnClick"
             android:text="@string/button4" />
     </GridLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
