@@ -109,7 +109,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/teal_700"
-            android:onClick="btnClick"
+            android:onClick="moviesBtn"
             android:text="@string/button1" />
 
         <Button
