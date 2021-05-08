@@ -24,6 +24,13 @@ class MainActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    /**Called when user presses Movies button */
+    fun moviesBtn(view:View){
+        val intent = Intent(this, MovieActivity::class.java)
+        startActivity(intent)
+    }
+
     fun btnClick(view:View) {
         val button = view as Button
         Toast.makeText(applicationContext, button.text, Toast.LENGTH_LONG).show()
