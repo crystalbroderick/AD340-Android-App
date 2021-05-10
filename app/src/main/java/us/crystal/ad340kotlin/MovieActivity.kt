@@ -19,6 +19,7 @@ class MovieActivity : AppCompatActivity(), MovieAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         movieList = MovieData.movieData()
         recycler.adapter = MovieAdapter(movieList, this)
         recycler.layoutManager = LinearLayoutManager(this)

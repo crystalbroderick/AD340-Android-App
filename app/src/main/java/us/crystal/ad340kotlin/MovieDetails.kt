@@ -13,6 +13,8 @@ class MovieDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         //Intent intent = getIntent()
         val movie_title = intent.extras?.getString("movie_title")
@@ -24,7 +26,7 @@ class MovieDetails : AppCompatActivity() {
         findViewById<TextView>(R.id.movie_year).text = movie_year
         findViewById<TextView>(R.id.movie_desc).text = movie_desc
         findViewById<TextView>(R.id.director).text = director
-        supportActionBar?.setTitle(movie_title)
+        supportActionBar?.title = movie_title
              //= message.toString()
         //val movie_title = intent.getStringArrayExtra(movie_title.toString())
         //findViewById<TextView>(R.id.movie_title).text = movie_title.toString()
