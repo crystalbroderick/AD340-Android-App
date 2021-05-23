@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun trafficCamBtn(view:View){
+        val intent = Intent(this, TrafficCamerasActivity::class.java)
+        startActivity(intent)
+    }
+
     fun btnClick(view:View) {
         val button = view as Button
         Toast.makeText(applicationContext, button.text, Toast.LENGTH_LONG).show()
