@@ -1,5 +1,8 @@
 package us.crystal.ad340kotlin.model
 
 data class Camera(
-    val Features: List<Location>
+    val Id: String,
+    val Description: String,
+    val ImageUrl: String,
+    val Type: String
 )
