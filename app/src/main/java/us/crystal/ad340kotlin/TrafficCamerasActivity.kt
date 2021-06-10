@@ -49,11 +49,15 @@ class TrafficCamerasActivity : AppCompatActivity() {
                 val len = camData.length()
                 for (i in 1 until len) {
                     val cameras = camData.getJSONObject(i).getJSONArray("Cameras")
+                    val points = camData.getJSONObject(i).getJSONArray("PointCoordinate")
+                    // Log.d(TAG, points.toString())
+                    val camLatLng = doubleArrayOf(points.getDouble(0), points.getDouble(1))
                     val camera = Camera(
                         cameras.getJSONObject(0).getString("Id"),
                         cameras.getJSONObject(0).getString("Description"),
                         cameras.getJSONObject(0).getString("ImageUrl"),
                         cameras.getJSONObject(0).getString("Type"),
+                        camLatLng
                     )
                     mCamera.add(camera)
                 }

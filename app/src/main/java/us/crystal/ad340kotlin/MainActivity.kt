@@ -40,4 +40,9 @@ class MainActivity : AppCompatActivity() {
         val button = view as Button
         Toast.makeText(applicationContext, button.text, Toast.LENGTH_LONG).show()
     }
+
+    fun mapBtn(view:View){
+        val intent = Intent(this, MapActivity::class.java)
+        startActivity(intent)
+    }
 }
