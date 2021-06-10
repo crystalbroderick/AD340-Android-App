@@ -38,23 +38,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location)
 
-/*
-        val req = JsonObjectRequest(
-            Request.Method.GET, url, null,
-            { response ->
-                val camData = response.getJSONArray("Cameras")
-                val len = camData.length()
-                for (i in 1 until len) {
-                    val locations = camData.getJSONObject(i).getJSONArray("PointCoordinate")
-                    val Latitude = locations.getJSONObject(0).getDouble("PointCoordinate")
-                    Log.d(TAG, Latitude.toString())
-                    val Longitude = locations.getJSONObject(1).getDouble("PointCoordinate")
-                    val camLatLng = doubleArrayOf(Latitude, Longitude)
-                    mLocations.add(camLatLng)
-                }
-            }) { error -> Log.d(TAG, "Volley Error" + error.message) }
-        queue.add(req)
-*/
+       // mMap?.setInfoWindowAdapter(MarkerAdapter(this))
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
@@ -104,38 +89,16 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                         cameras.getJSONObject(0).getString("ImageUrl"),
                         cameras.getJSONObject(0).getString("Type"),
                         camLatLng,
-                            )
+                    )
 
 
 
                     mLocations.add(location)
-                    //Log.e(TAG, mLocations.toString())
-                   // val camLatLng = doubleArrayOf(points.getDouble(0), points.getDouble(1))
-
-                  //  Log.e("camLatLng: ", camLatLng.toString())
-                  //  mLocations.add(camLatLng)
-
-                    //val latLng = doubleArrayOf(points.getDouble(0), points.getDouble(1))
-
-                   // mLocations.add(points)
-
-                    //val camLng = camData.getJSONObject(1).getDouble("PointCoordinate")
-                    //val camLatLng = doubleArrayOf(camLat, camLng)
-              //      mLocations.add(camLatLng)
-
-
-
-                   /* val locations = camData.getJSONObject(i).getJSONArray("PointCoordinate")
-                    val camLat = locations.getJSONObject(0).getDouble("PointCoordinate")
-                    Log.d(TAG, camLat.toString())
-                    val camLng = locations.getJSONObject(1).getDouble("PointCoordinate")
-                    val camLatLng = doubleArrayOf(camLat, camLng)*/
-                   // mLocations.add(camLatLng)
                 }
                 showCamLocationMarker()
             }) { error -> Log.d(TAG, "Volley Error" + error.message) }
         queue.add(req)
-        Log.e(TAG, queue.toString())
+       // Log.e(TAG, queue.toString())
     }
 
     private fun showCamLocationMarker() {
@@ -150,19 +113,27 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             val position = LatLng(cL.points[0], cL.points[1])
 
             // Place a marker at the points location
-            val camLocationMarker = MarkerOptions()
+            val marker = MarkerOptions()
                 .title(cL.Description)
                 .position(position)
 
-            // Add new marker
-            mMap!!.addMarker(camLocationMarker)
+     /*       mLocations.forEach { cL ->
+                val marker = mMap?.addMarker(
+                    MarkerOptions()
+                        .title(cL.Description)
+                        .position(position)
+                )
+                if (marker != null) {
+                    marker.tag = cL
+                }            marker.tag = mLocations*/
 
-            Log.e(TAG, camLocationMarker.toString())
-        }
+            // Add new marker
+            mMap!!.addMarker(marker)
+            //Log.e(TAG, marker.toString())
+            }
+
 
     }
-
-
     override fun onMapReady(googleMap: GoogleMap?) {
         mMap = googleMap
 
