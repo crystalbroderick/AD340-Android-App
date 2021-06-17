@@ -7,104 +7,61 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/name"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="18sp"
-        android:typeface="sans"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/factList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/factList"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <TextView
-        android:id="@+id/fact1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/fact1"
-        app:layout_constraintStart_toStartOf="@+id/factList"
-        app:layout_constraintTop_toBottomOf="@+id/factList" />
-
-    <TextView
-        android:id="@+id/fact2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/fact2"
-        app:layout_constraintStart_toStartOf="@+id/fact1"
-        app:layout_constraintTop_toBottomOf="@+id/fact1" />
-
-    <TextView
-        android:id="@+id/fact3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/fact3"
-        app:layout_constraintStart_toStartOf="@+id/fact2"
-        app:layout_constraintTop_toBottomOf="@+id/fact2" />
-
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="84dp"
         android:ems="10"
-        android:hint="@string/edit_message"
-        android:importantForAutofill="no"
+        android:importantForAutofill="yes"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/send"
+        app:layout_constraintEnd_toStartOf="@+id/login"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fact3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="sendMessage"
-        android:text="@string/button_send"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText" />
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUserName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
 
-    <!-- 2x2 Grid for button navigation-->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:columnCount="2"
+        android:padding="5dp"
         android:useDefaultMargins="true"
-        app:layout_constraintEnd_toEndOf="@+id/send"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
         tools:context="us.crystal.ad340kotlin">
 
         <Button
             android:id="@+id/button1"
+            android:layout_width="111dp"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_columnWeight="1"
@@ -137,4 +94,19 @@
             android:onClick="btnClick"
             android:text="@string/button4" />
     </GridLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="loginBtn"
+        android:text="@string/button_login"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextUserName" />
+
+    <!-- 2x2 Grid for button navigation-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

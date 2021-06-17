@@ -6,9 +6,9 @@
     <string name="fact2">* I mainly read thrillers and fantasy novels</string>
     <string name="fact3">* I have colorful blue/purple hair~</string>
     <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
+    <string name="button_login">Login</string>
     <string name="button1">Movies</string>
-    <string name="button2">Traffic Cam</string>
+    <string name="button2">Cameras</string>
     <string name="button3">Map</string>
     <string name="button4">Button 4</string>
     <string name="textview">TextView</string>
